@@ -11,10 +11,6 @@ def style_background_home():
                     background: #5865F2 !important;
                 }
 
-                .stApp div[data-testid="stColumn"] h2 {
-                    color: #000 !important;
-                }
-
                 .stApp div[data-testid="stColumn"]{
                     background-color:#E0E3FF !important;
                     padding:2.5rem !important;
@@ -75,15 +71,11 @@ def style_base_layout():
                 line-height:0.9 !important;
                 margin-bottom:0rem !important;
             }
-
-            
                 
             h3, h4, p {
                 font-family: 'Outfit', sans-serif;    
-                
             }
-
-            
+                
 
             button{
                 border-radius: 1.5rem !important;
@@ -114,6 +106,21 @@ def style_base_layout():
 
             button:hover{
                 transform :scale(1.05)}
+
+            /* Audio widget buttons fix */
+            [data-testid="stAudioInput"] button {
+                background-color: #ffffff !important;
+                color: #5865F2 !important;
+                padding: 6px !important;
+                border-radius: 50% !important;
+                min-width: 36px !important;
+                min-height: 36px !important;
+            }
+
+            [data-testid="stAudioInput"] button:hover {
+                background-color: #E0E3FF !important;
+                transform: scale(1.05);
+            }
         </style>  
 
                 """
