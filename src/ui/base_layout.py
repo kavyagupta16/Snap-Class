@@ -108,6 +108,15 @@ def style_base_layout():
                 transform :scale(1.05)}
 
             /* Audio widget buttons fix */
+            [data-testid="stAudioInput"] {
+                overflow: visible !important;
+                position: relative !important;
+            }
+
+            [data-testid="stAudioInput"] > div {
+                overflow: visible !important;
+            }
+
             [data-testid="stAudioInput"] button {
                 background-color: #ffffff !important;
                 color: #5865F2 !important;
