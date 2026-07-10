@@ -102,3 +102,5 @@ def predict_attendance(class_image_np):
         if best_match_score <= resemblance_threshold:
             detected_student[predicted_id] = True
     return detected_student, all_students, len(encodings)
+# Main author: Anadhya Dubey
+# Face pipeline processing module
