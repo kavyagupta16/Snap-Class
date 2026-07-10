@@ -14,7 +14,9 @@ from src.pipelines.face_pipeline import predict_attendance
 from src.components.dialog_attendance_results import attendance_result_dialog
 import numpy as np
 
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
+
+IST = timezone(timedelta(hours=5, minutes=30))
 
 import pandas as pd
 
@@ -162,7 +164,7 @@ def teacher_tab_take_attendance():
 
                     results, attendance_to_log  = [], []
 
-                    current_timestamp = datetime.now().strftime("%Y-%m-%dT%H:%M:%S")
+                    current_timestamp = datetime.now(IST).strftime("%Y-%m-%dT%H:%M:%S")
 
 
                     for node in enrolled_students:
@@ -252,7 +254,7 @@ def teacher_tab_attendance_records():
 
         data.append({
             "ts_group": ts.split(".")[0] if ts else None,
-            "Time": datetime.fromisoformat(ts).strftime("%Y-%m-%d %I:%M %p") if ts else "N'A",
+            "Time": datetime.fromisoformat(ts).astimezone(IST).strftime("%Y-%m-%d %I:%M %p") if ts else "N'A",
             "Subject": r['subjects']['name'],
             "Subject Code":r['subjects']['subject_code'],
             "is_present": bool(r.get('is_present', False))
